@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="styl.css">
+	<title>Zadania zdalne e-MSI</title>
+	<script type="text/javascript">
+	
+	const kn = document.getElementsByClassName('kwotanetto');
+
+function oblicz() {
+
+var kb = document.getElementsByClassName('kwotabrutto');
+var ilosc = document.getElementsByClassName('ilosc');
+var vat = document.getElementsByClassName('VAT');
+var wn = document.getElementsByClassName('wartoscnetto');
+var wb = document.getElementsByClassName('wartoscbrutto');
+for(let i =0;i<kn.length;i++){
+	 var kwotanetto = parseFloat(kn[i].innerText);
+	 var kwotabrutto = kwotanetto + kwotanetto * vat[i].value;
+	 var wartoscnetto = kwotanetto * ilosc[i].value;
+	 var wartoscbrutto = wartoscnetto + wartoscnetto* vat[i].value;
+	 kb[i].innerText = kwotabrutto.toFixed(2) + " zł";
+	 wn[i].innerText = wartoscnetto.toFixed(2) + " zł";
+	 wb[i].innerText = wartoscbrutto.toFixed(2) + " zł";
+}
+}
+
+function pomaluj() {
+	
+	for(let i=0;i<kn.length;i++) {
+		var kwotanetto = parseFloat(kn[i].innerText);
+		if(kwotanetto>1000) {
+			var tabela = document.getElementById("tabela").rows[i+1]
+			tabela.style.backgroundColor = "#00FF00";
+		}
+	}
+}
+	
+	</script>
+	
+</head>
+<body>
+	<div id="Lewy"> 
+		<ol type="a">
+			<li><a href="http://krzysztofjanczak.cba.pl/roznekontrolkihtml.html"> Różne kontrolki HTML</a></li>
+			<li><a href="http://krzysztofjanczak.cba.pl/tabelapracownikow.html"> Tabela Pracowników</a></li>
+			<li><a href="http://krzysztofjanczak.cba.pl/tabelafakturvat.html"> Tabela Faktur VAT</a></li>
+			<li><a href="http://krzysztofjanczak.cba.pl/tabeladelegacjibd.html"> Tabele Delegacji BD</a></li>
+			<li><a href="http://krzysztofjanczak.cba.pl/danekontrahentow.html"> Dane Kontrahentów</a></li>
+		
+		</ol>
+	
+	</div>
+	<div id="Prawy"> 
+		<table border id="tabela" onchange="oblicz()">
+			<tr>
+				<th>Lp</th>
+				<th>Opis</th>
+				<th>MPK</th>
+				<th>Kwota Netto</th>
+				<th>Ilość</th>
+				<th>VAT</th>
+				<th>Kwota Brutto</th>
+				<th>Wartość Netto</th>
+				<th>Wartość Brutto</th>
+			
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>Wiertarka</td>
+				<td>Sklep budowlany</td>
+				<td class="kwotanetto">1001.00 zł</td>
+				<td><input type="number" class="ilosc" value="0" min="0" ></td>
+				<td><select class="VAT">
+					<option value="0">0%</option>
+					<option value="0.05">5%</option>
+					<option value="0.08">8%</option>
+					<option value="0.23">23%</option>
+					
+				</select>
+				</td>
+				<td class="kwotabrutto">1001.00 zł</td>
+				<td class="wartoscnetto">0.00 zł</td>
+				<td class="wartoscbrutto">0.00 zł</td>
+			
+			</tr>
+			
+			<tr>
+				<td>2</td>
+				<td>Bułki</td>
+				<td>Piekarnia</td>
+				<td class="kwotanetto">1.50 zł</td>
+				<td><input type="number" class="ilosc" value="0" min="0" ></td>
+				<td><select class="VAT">
+					<option value="0">0%</option>
+					<option value="0.05">5%</option>
+					<option value="0.08">8%</option>
+					<option value="0.23">23%</option>
+					
+				</select>
+				</td>
+				<td class="kwotabrutto">1.50 zł</td>
+				<td class="wartoscnetto">0.00 zł</td>
+				<td class="wartoscbrutto">0.00 zł</td>
+			
+			</tr>
+			
+			<tr>
+				<td>3</td>
+				<td>Śrubka</td>
+				<td>Sklep Budowlany</td>
+				<td class="kwotanetto">2000.00 zł</td>
+				<td><input type="number" class="ilosc" value="0" min="0"></td>
+				<td><select class="VAT">
+					<option value="0">0%</option>
+					<option value="0.05" >5%</option>
+					<option value="0.08">8%</option>
+					<option value="0.23">23%</option>
+					
+				</select>
+				</td>
+				<td class="kwotabrutto">2000.00 zł</td>
+				<td class="wartoscnetto">0.00 zł</td>
+				<td class="wartoscbrutto">0.00 zł</td>
+			
+			</tr>
+			
+			<tr>
+				<td>4</td>
+				<td>Piły</td>
+				<td>Sklep Budowlany</td>
+				<td class="kwotanetto">12.00 zł</td>
+				<td><input type="number" class="ilosc" value="0" min="0"></td>
+				<td><select class="VAT">
+					<option value="0">0%</option>
+					<option value="0.05">5%</option>
+					<option value="0.08">8%</option>
+					<option value="0.23">23%</option>
+					
+				</select>
+				</td>
+				<td class="kwotabrutto">12.00 zł</td>
+				<td class="wartoscnetto">0.00 zł</td>
+				<td class="wartoscbrutto">0.00 zł</td>
+			
+			</tr>
+			
+			<tr>
+				<td>5</td>
+				<td>Młotek</td>
+				<td>Sklep Budowlany</td>
+				<td class="kwotanetto">20.00 zł</td>
+				<td><input type="number" class="ilosc" value="0" min="0"></td>
+				<td><select class="VAT">
+					<option value="0">0%</option>
+					<option value="0.05">5%</option>
+					<option value="0.08">8%</option>
+					<option value="0.23">23%</option>
+					
+				</select>
+				</td>
+				<td class="kwotabrutto">20.00 zł</td>
+				<td class="wartoscnetto">0.00 zł</td>
+				<td class="wartoscbrutto">0.00 zł</td>
+			
+			</tr>
+	
+		</table>
+		<button onclick="pomaluj()">Powyżej 1000,00 zł Netto</button>
+	</div>
+</body>
+</html>

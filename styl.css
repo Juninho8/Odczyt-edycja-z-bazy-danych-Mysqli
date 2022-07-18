@@ -1,0 +1,33 @@
+body,html {
+	widht:100%;
+	height:100%;
+	margin:0px;
+	padding:0px;
+	
+}
+
+#Lewy {
+	float:left;
+	width:25%;
+	height:100%;
+}
+#Prawy {
+	float:left;
+	width:75%;
+	height:100%;
+	
+	
+}
+
+/*Strona danekontrahentow*/
+
+#panel {
+	float:left;
+	width:30%;
+	
+}
+#kontraheci {
+	float:left;
+	width:70%;
+	
+}
