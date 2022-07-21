@@ -6,7 +6,7 @@
 	<title>Tabela kontrahentow </title>
 	<?php
 		function dodaj() {
-			$polaczenie = mysqli_connect("127.0.0.1","root","","janczak") or die("wystąpił błąd połączenia");
+			$polaczenie = mysqli_connect("mysql.cba.pl","Janczak2","Password1","janczak2") or die("wystąpił błąd połączenia");
 			mysqli_query($polaczenie,"SET CHARACTER SET 'utf8'");
             mysqli_query($polaczenie,"SET SESSION collation_connection = 'utf8_unicode_ci'");
 			$nip=$_POST['nip'];
@@ -39,7 +39,7 @@
 		
 		
 		function edycja() {
-			$polaczenie = mysqli_connect("127.0.0.1","root","","janczak") or die("wystąpił błąd połączenia");
+			$polaczenie = mysqli_connect("mysql.cba.pl","Janczak2","Password1","janczak2") or die("wystąpił błąd połączenia");
 			mysqli_query($polaczenie,"SET CHARACTER SET 'utf8'");
             mysqli_query($polaczenie,"SET SESSION collation_connection = 'utf8_unicode_ci'");
 			$wyb=$_POST['wyb'];
@@ -60,7 +60,7 @@
 		}
 	
 		function usun() {
-			$polaczenie = mysqli_connect("127.0.0.1","root","","janczak") or die("wystąpił błąd połączenia");
+			$polaczenie = mysqli_connect("mysql.cba.pl","Janczak2","Password1","janczak2") or die("wystąpił błąd połączenia");
 			mysqli_query($polaczenie,"SET CHARACTER SET 'utf8'");
             mysqli_query($polaczenie,"SET SESSION collation_connection = 'utf8_unicode_ci'");
 			$nipusun = $_POST['nipusun'];
@@ -93,7 +93,7 @@
 			
 			
 			function wyswietl() {
-				$polaczenie = mysqli_connect("127.0.0.1","root","","janczak") or die("wystąpił błąd połączenia");
+				$polaczenie = mysqli_connect("mysql.cba.pl","Janczak2","Password1","janczak2") or die("wystąpił błąd połączenia");
 				mysqli_query($polaczenie,"SET CHARACTER SET 'utf8'");
 				mysqli_query($polaczenie,"SET SESSION collation_connection = 'utf8_unicode_ci'");
 				$zapytanie = mysqli_query($polaczenie,"SELECT * FROM `danekontrahentow` WHERE USUNIETY=0");
